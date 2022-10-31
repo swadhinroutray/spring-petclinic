@@ -1,4 +1,4 @@
-pipeline {
+node {
   stage('SCM') {
     git branch: 'main',
     // credentialsId: '12345-1234-4696-af25-123455',
