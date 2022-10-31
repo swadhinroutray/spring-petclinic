@@ -1,12 +1,11 @@
 Vagrant.configure("2") do |config|
-  config.vm.define "app" do |app|
-    app.vm.provider "docker" do |d|
-      d.name = "jenkins"
-      d.image = "jenkinsci/blueocean",
-      args: "--name jenkins -p '8000:8000' -p '5000:5000' --network=host"
-    end
+    config.vm.provider "docker" do |d|
+      d.image = "jenkinsci/blueocean"
+      d.has_ssh = false
+      d.ports = ["8080:8080"]
+      d.volumes = ["/data/jenkins:/root/.jenkins"]
   end
-
+end
 #   config.vm.define "logs" do |logs|
 #     logs.vm.provider "docker" do |d|
 #       d.name = "cnt2"
