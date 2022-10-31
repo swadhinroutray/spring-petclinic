@@ -6,7 +6,7 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-        ./mvnw spring-boot:build-image &&  docker push spring-petclinic
+        ./mvnw spring-boot:build-image
     """
   }
   stage('SonarQube analysis') {
