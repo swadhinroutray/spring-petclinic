@@ -5,7 +5,7 @@ node {
     url: 'https://github.com/swadhinroutray/spring-petclinic.git'
   }
   stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarScanner 4.0';
+    def scannerHome = tool 'SonarScanner 2.14';
     withSonarQubeEnv('My SonarQube Server') { 
       sh "${scannerHome}/bin/sonar-scanner"
     }
