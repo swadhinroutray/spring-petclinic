@@ -6,8 +6,9 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-        ./mvnw spring-boot:build-image
+        cat mvnw
     """
+    // ./mvnw spring-boot:build-image
   }
   stage('SonarQube analysis') {
     def scannerHome = tool 'SonarScanner 2.14';
