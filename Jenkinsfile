@@ -6,7 +6,7 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-        cat mvnw
+        cat mvnw 
     """
     // ./mvnw spring-boot:build-image
   }
