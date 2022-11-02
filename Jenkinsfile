@@ -6,9 +6,7 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-        pwd
-        ./mvnw package
-        java -jar target/*.jar
+      docker pull swadhinroutray/spring-petclinic
     """
     // ./mvnw spring-boot:build-image
   }
