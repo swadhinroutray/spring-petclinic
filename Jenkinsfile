@@ -6,14 +6,20 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-        cat mvnw 
+        pwd
+        ./mvnw package
+        java -jar target/*.jar
     """
     // ./mvnw spring-boot:build-image
   }
-  stage('SonarQube analysis') {
-    def scannerHome = tool 'SonarScanner 2.14';
-    withSonarQubeEnv('My SonarQube Server') { 
-      sh "${scannerHome}/bin/sonar-scanner"
-    }
+  stage('SonarQube Installation') {
+   sh"""
+   docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+   """
+  }
+  stage('Run Sonarqube'){
+    sh"""
+    echo "Running SOnarqube"
+    """
   }
 }
