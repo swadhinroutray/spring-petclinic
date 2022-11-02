@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
       d.image = "jenkinsci/blueocean"
       d.has_ssh = false
       d.ports = ["8080:8080"]
-      d.volumes = ["/data/jenkins:/root/.jenkins","/var/run/docker.sock:/var/run/docker.sock"]
+      d.volumes = ["/data/jenkins:/root/.jenkins"]
+      d.volumes = ["/var/run/docker.sock:/var/run/docker.sock"]
   end
 end
