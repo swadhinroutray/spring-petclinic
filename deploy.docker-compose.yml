@@ -8,6 +8,6 @@ services:
       - 8080:8080
       - 50000:50000
     container_name: jenkins
-  volumes:
-    - /data/jenkins:/root/.jenkins
-    - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
+      - /data/jenkins:/root/.jenkins
+      - /var/run/docker.sock:/var/run/docker.sock
