@@ -1,22 +1,60 @@
 pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                git 'https://github.com/swadhinroutray/spring-petclinic.git'
+                sh './mvnw clean compile'
+                // bat '.\\mvnw clean compile'
+            }
+        }
+        // stage('Test') {
+        //     steps {
+        //         sh './mvnw test'
+        //         // bat '.\\mvnw test'
+        //     }
+
+        //     post {
+        //         always {
+        //             junit '**/target/surefire-reports/TEST-*.xml'
+        //         }
+        //     }
+        // }
+        stage('Publish') {
+            steps {
+                sh './mvnw package'
+                // bat '.\\mvnw package'
+            }
+            post {
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+    }
+}
+
+/*
+pipeline {
   agent any
   
   stages {
     stage('SCM') {
-      git branch: 'main',
-      // credentialsId: '12345-1234-4696-af25-123455',
-      url: 'https://github.com/swadhinroutray/spring-petclinic.git'
+      
+      steps{
+        git 'https://github.com/swadhinroutray/spring-petclinic.git'
+      }
     }
     
     stage('Build and Test'){
-          steps { 
+        steps { 
           sh"""
           ./mvnw package
           """
-          // ./mvnw spring-boot:build-image
         }
         post{
-              success {
+            success {
                           archiveArtifacts 'target/*.jar'
                       }
         }
@@ -34,3 +72,4 @@ pipeline {
   // }
   }
 }
+*/
