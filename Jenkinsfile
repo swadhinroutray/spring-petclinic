@@ -5,11 +5,17 @@ node {
     url: 'https://github.com/swadhinroutray/spring-petclinic.git'
   }
   stage('Build Java code and deploy'){
+   
+   steps { 
     sh"""
     ./mvnw package
-    java -jar target/*.jar --server.port=8083
     """
     // ./mvnw spring-boot:build-image
+   }
+   post{
+        success {
+                    archiveArtifacts 'target/*.jar'
+                }
   }
   stage('SonarQube Installation') {
    sh"""
