@@ -12,7 +12,7 @@ services:
       - /data/jenkins:/root/.jenkins
       - /var/run/docker.sock:/var/run/docker.sock
   SonarQube:
-    image: SonarQube:community
+    image: sonarqube
     depends_on:
       - db
     environment:
