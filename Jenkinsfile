@@ -6,7 +6,7 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-      docker pull swadhinroutray/spring-petclinic
+     java -jar target/*.jar --server.port=8083
     """
     // ./mvnw spring-boot:build-image
   }
