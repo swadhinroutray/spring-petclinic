@@ -6,7 +6,8 @@ node {
   }
   stage('Build Java code and deploy'){
     sh"""
-     sudo java -jar target/*.jar --server.port=8083
+    ./mvnw package
+    java -jar target/*.jar --server.port=8083
     """
     // ./mvnw spring-boot:build-image
   }
