@@ -27,17 +27,16 @@ services:
       - sonarqube_extensions:/opt/sonarqube/extensions
       - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
   db:
+    image: postgres
+    restart: unless-stopped
 
-  image: postgres
-  restart: unless-stopped
-
-  environment:
-    - POSTGRES_USER=sonarqube
-    - POSTGRES_PASSWORD=sonarpass
-    - POSTGRES_DB=sonarqube
-  volumes:
-    - sonarqube_db:/var/lib/postgresql
-    - postgresql_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=sonarqube
+      - POSTGRES_PASSWORD=sonarpass
+      - POSTGRES_DB=sonarqube
+    volumes:
+      - sonarqube_db:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
 volumes:
   postgresql_data:
   sonarqube_bundled-plugins:
