@@ -12,11 +12,12 @@ services:
       - /data/jenkins:/root/.jenkins
       - /var/run/docker.sock:/var/run/docker.sock
   sonarqube:
-    image: sonarqube
+    image: sonarqube:latest
     expose:
       - 9000
     ports:
-      - "127.0.0.1:9000:9000"
+      - "9000:9000"
+      - "9002:9002"
     networks:
       - sonarnet
     environment:
