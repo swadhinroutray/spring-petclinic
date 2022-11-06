@@ -16,7 +16,7 @@ node {
   stage('Sonar Scanner'){
     // def scannerHome = tool 'SonarScanner 4.0';
     withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
+      sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner"
     }
   }
 }
