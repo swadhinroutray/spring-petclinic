@@ -8,4 +8,3 @@ Vagrant.configure("2") do |config|
   end
 end
 
-pat-2 sqp_a2ee39bcc6c3f1598eb70db762dbbc47f0ff3e4a
