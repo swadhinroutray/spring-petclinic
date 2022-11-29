@@ -1,0 +1,17 @@
+version: "3"
+services:
+  jansible:
+    container_name: jansible
+    image: jansible
+    build:
+      context: .
+      dockerfile: jansible.Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - /data/jenkins:/root/.jenkins
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - net
+networks:
+  net:

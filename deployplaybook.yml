@@ -1,0 +1,10 @@
+---
+- name: Transfer and execute a script.
+  hosts: deployserver
+  tasks:
+    - name: Copy Artifact to Remote server
+      copy:
+        src: /root/spring-petclinic/target
+        dest: /home/ubuntu/spring-petclinic
+    - name: Copy and Execute the script
+      script: /root/spring-petclinic/deployJava.sh
