@@ -4,7 +4,7 @@
   tasks:
     - name: Copy Artifact to Remote server
       copy:
-        src: /home/ubuntu/spring-petclinic/target/*.jar
+        src: /home/ubuntu/spring-petclinic/target/spring-petclinic-2.7.3.jar
         dest: /root/spring-petclinic/target
         remote_src: yes
     - name: Copy and Execute the script
