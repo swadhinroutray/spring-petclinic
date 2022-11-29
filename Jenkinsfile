@@ -18,6 +18,6 @@ node {
   //   }
   // }
   stage('Ansible Deploy'){
-    ansiblePlaybook become: true, becomeUser: null, credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.inv', playbook: 'deployplaybook.yml', sudoUser: null -vvv
+    ansiblePlaybook become: true, becomeUser: null, credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.inv', playbook: 'deployplaybook.yml', sudoUser: null 
   }
 }
