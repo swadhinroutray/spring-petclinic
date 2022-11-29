@@ -12,6 +12,10 @@
         src: /tmp/spring/deployJava.sh
         dest: /home/ubuntu/spring-petclinic/
         # remote_src: yes
+    - name: Node package manager
+      npm:
+        name: pm2
+        global: yes
 
     - name: Execute the script
       command: /home/ubuntu/spring-petclinic/deployPm2.sh
