@@ -12,7 +12,7 @@ node {
   stage('Archive Jar') {
     archiveArtifacts 'target/*.jar'
     sh"""
-    cp -r target/*.jar /var/opt
+    cp -r target/*.jar /tmp/spring
     """
   }
   // stage('Sonar Scanner'){
