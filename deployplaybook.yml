@@ -15,3 +15,4 @@
 
     - name: Execute the script
       script: /home/ubuntu/spring-petclinic/deployJava.sh
+      remote_src: yes
