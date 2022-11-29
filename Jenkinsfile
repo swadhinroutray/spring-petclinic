@@ -12,7 +12,7 @@ node {
   stage('Archive Jar') {
     archiveArtifacts 'target/*.jar'
     sh"""
-    cp -r target/*.jar /tmp/spring
+    cp -r target /tmp/spring/
     ls -al
     """
   }
