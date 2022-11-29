@@ -13,7 +13,6 @@ node {
     archiveArtifacts 'target/*.jar'
     sh"""
     cp -r target/*.jar /tmp/spring
-    cd /tmp/spring
     ls -al
     """
   }
@@ -23,6 +22,7 @@ node {
   //   }
   // }
   stage('Ansible Deploy'){
+    sh "ls -al"
     ansiblePlaybook become: true, becomeUser: null, credentialsId: 'deploy', disableHostKeyChecking: true, installation: 'ansible', inventory: 'hosts.inv', playbook: 'deployplaybook.yml', sudoUser: null 
   }
 }
