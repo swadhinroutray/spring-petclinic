@@ -6,6 +6,6 @@
       copy:
         src: /tmp/spring/target/spring-petclinic-2.7.3.jar
         dest: /home/ubuntu/spring-petclinic/target
-        remote_src: yes
+        # remote_src: yes
     - name: Copy and Execute the script
       script: /root/spring-petclinic/deployJava.sh
