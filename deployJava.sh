@@ -1,8 +1,8 @@
 echo "Install Java and Deploy JAR"
-sudo apt update
-sudo apt install default-jre
-sudo apt update
-sudo apt install default-jdk
+sudo apt update -y
+sudo apt install default-jre -y
+sudo apt update -y
+sudo apt install default-jdk -y
 javac -version
 
 echo "Deploy Petclinic JAR"
