@@ -14,4 +14,4 @@
         # remote_src: yes
 
     - name: Execute the script
-      command: sh /home/ubuntu/spring-petclinic/deployPm2.sh
+      command: /home/ubuntu/spring-petclinic/deployPm2.sh
