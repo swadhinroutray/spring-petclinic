@@ -13,7 +13,7 @@ node {
     archiveArtifacts 'target/*.jar'
     sh"""
     cp -r target /tmp/spring/
-    ls -al
+    cp -r deployJava.sh /tmp/spring/
     """
   }
   // stage('Sonar Scanner'){
