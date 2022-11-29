@@ -14,7 +14,4 @@
         # remote_src: yes
 
     - name: Execute the script
-      command: sh /home/ubuntu/spring-petclinic/deployJava.sh
-      register: version
-    - debug:
-      var: version.stdout_lines
+      command: sudo sh /home/ubuntu/spring-petclinic/deployJava.sh
