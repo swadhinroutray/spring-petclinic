@@ -10,8 +10,10 @@ node {
     """
   }
   stage('Archive Jar') {
-     archiveArtifacts 'target/*.jar'
-    
+    archiveArtifacts 'target/*.jar'
+    sh"""
+    cp -r target/*.jar /var/opt
+    """
   }
   // stage('Sonar Scanner'){
   //   withSonarQubeEnv(installationName: 'sq1') { // If you have configured more than one global server connection, you can specify its name
