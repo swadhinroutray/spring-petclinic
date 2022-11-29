@@ -11,6 +11,7 @@ node {
   }
   stage('Archive Jar') {
      archiveArtifacts 'target/*.jar'
+    
   }
   // stage('Sonar Scanner'){
   //   withSonarQubeEnv(installationName: 'sq1') { // If you have configured more than one global server connection, you can specify its name
