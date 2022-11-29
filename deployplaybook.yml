@@ -7,6 +7,11 @@
         src: /tmp/spring/target/spring-petclinic-2.7.3.jar
         dest: /home/ubuntu/spring-petclinic/target
         # remote_src: yes
+    - name: Copy Artifact to Remote server
+      copy:
+        src: /tmp/spring/deployJava.sh
+        dest: /home/ubuntu/spring-petclinic/
+        # remote_src: yes
 
-    - name: Copy and Execute the script
-      script: /tmp/spring/deployJava.sh
+    - name: Execute the script
+      script: /home/ubuntu/spring-petclinic/deployJava.sh
