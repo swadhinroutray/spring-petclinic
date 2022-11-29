@@ -12,10 +12,6 @@
         src: /tmp/spring/deployJava.sh
         dest: /home/ubuntu/spring-petclinic/
         # remote_src: yes
-    # - name: Node package manager
-    #   npm:
-    #     name: pm2
-    #     global: yes
 
     - name: Execute the script
-      shell: /home/ubuntu/spring-petclinic/deployPm2.sh
+      shell: nohup java -jar /home/ubuntu/spring-petclinic/target/spring-petclinic-2.7.3.jar --server.port=8080 &
